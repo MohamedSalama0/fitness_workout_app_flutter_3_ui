@@ -220,7 +220,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                         onPressed: () {},
                         child: Text(
                           "${breakfastArr.length} Items | 230 calories",
-                          style: TextStyle(color: TColor.gray, fontSize: 12),
+                          style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
                       )
                     ],
@@ -254,7 +254,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                         onPressed: () {},
                         child: Text(
                           "${lunchArr.length} Items | 500 calories",
-                          style: TextStyle(color: TColor.gray, fontSize: 12),
+                          style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
                       )
                     ],
@@ -288,7 +288,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                         onPressed: () {},
                         child: Text(
                           "${snacksArr.length} Items | 140 calories",
-                          style: TextStyle(color: TColor.gray, fontSize: 12),
+                          style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
                       )
                     ],
@@ -322,7 +322,7 @@ class _MealScheduleViewState extends State<MealScheduleView> {
                         onPressed: () {},
                         child: Text(
                           "${dinnerArr.length} Items | 120 calories",
-                          style: TextStyle(color: TColor.gray, fontSize: 12),
+                          style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
                       )
                     ],

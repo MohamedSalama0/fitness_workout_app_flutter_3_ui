@@ -42,9 +42,9 @@ class TodayMealRow extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
-                     "${getDayTitle(mObj["time"].toString())} | ${getStringDateToOtherFormate(mObj["time"].toString(), outFormatStr: "h:mm aa")}",
+                    "${getDayTitle(mObj["time"].toString())} | ${getStringDateToOtherFormate(mObj["time"].toString(), outFormatStr: "h:mm aa")}",
                     style: TextStyle(
-                      color: TColor.gray,
+                      color: TColor.grey,
                       fontSize: 10,
                     ),
                   ),

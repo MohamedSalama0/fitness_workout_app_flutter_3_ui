@@ -57,7 +57,7 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
     {
       "name": "Blueberry Pancake",
       "image": "assets/img/f_1.png",
-      "b_image":"assets/img/pancake_1.png",
+      "b_image": "assets/img/pancake_1.png",
       "size": "Medium",
       "time": "30mins",
       "kcal": "230kCal"
@@ -65,7 +65,7 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
     {
       "name": "Salmon Nigiri",
       "image": "assets/img/f_2.png",
-       "b_image": "assets/img/nigiri.png",
+      "b_image": "assets/img/nigiri.png",
       "size": "Medium",
       "time": "20mins",
       "kcal": "120kCal"
@@ -180,7 +180,7 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     width: 1,
                     height: 25,
-                    color: TColor.gray.withOpacity(0.3),
+                    color: TColor.grey.withOpacity(0.3),
                   ),
                   InkWell(
                     onTap: () {},

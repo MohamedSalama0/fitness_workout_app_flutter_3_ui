@@ -106,7 +106,7 @@ class _ProfileViewState extends State<ProfileView> {
                         Text(
                           "Lose a Fat Program",
                           style: TextStyle(
-                            color: TColor.gray,
+                            color: TColor.grey,
                             fontSize: 12,
                           ),
                         )
@@ -253,9 +253,9 @@ class _ProfileViewState extends State<ProfileView> {
                             ),
                             CustomAnimatedToggleSwitch<bool>(
                               current: positive,
-                              values: [false, true],
-                              dif: 0.0,
-                              indicatorSize: Size.square(30.0),
+                              values: const [false, true],
+                              dif: 5.0,
+                              indicatorSize: const Size.square(30.0),
                               animationDuration:
                                   const Duration(milliseconds: 200),
                               animationCurve: Curves.linear,
@@ -273,12 +273,22 @@ class _ProfileViewState extends State<ProfileView> {
                                     Positioned(
                                         left: 10.0,
                                         right: 10.0,
-                                        
                                         height: 30.0,
                                         child: DecoratedBox(
                                           decoration: BoxDecoration(
-                                             gradient: LinearGradient(
-                                                colors: TColor.secondaryG),
+                                            // color:
+                                            // !positive ? Colors.grey : null,
+                                            gradient: LinearGradient(
+                                              colors: positive
+                                                  ? TColor.primaryG
+                                                  : [
+                                                      // Colors.white10,
+                                                      const Color.fromARGB(
+                                                          255, 231, 231, 231),
+                                                      const Color.fromARGB(
+                                                          255, 231, 231, 231),
+                                                    ],
+                                            ),
                                             borderRadius:
                                                 const BorderRadius.all(
                                                     Radius.circular(50.0)),
@@ -295,13 +305,15 @@ class _ProfileViewState extends State<ProfileView> {
                                     decoration: BoxDecoration(
                                       color: TColor.white,
                                       borderRadius: const BorderRadius.all(
-                                          Radius.circular(50.0)),
+                                        Radius.circular(50.0),
+                                      ),
                                       boxShadow: const [
                                         BoxShadow(
-                                            color: Colors.black38,
-                                            spreadRadius: 0.05,
-                                            blurRadius: 1.1,
-                                            offset: Offset(0.0, 0.8))
+                                          color: Colors.black38,
+                                          spreadRadius: 0.05,
+                                          blurRadius: 1.1,
+                                          offset: Offset(0.0, 0.8),
+                                        )
                                       ],
                                     ),
                                   ),

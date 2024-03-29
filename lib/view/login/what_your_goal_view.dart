@@ -125,7 +125,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                 Text(
                   "It will help us to choose a best\nprogram for you",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: TColor.gray, fontSize: 12),
+                  style: TextStyle(color: TColor.grey, fontSize: 12),
                 ),
                 const Spacer(),
                 SizedBox(

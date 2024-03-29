@@ -60,7 +60,7 @@ class FindEatCell extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               fObj["number"],
-              style: TextStyle(color: TColor.gray, fontSize: 12),
+              style: TextStyle(color: TColor.grey, fontSize: 12),
             ),
           ),
           const SizedBox(

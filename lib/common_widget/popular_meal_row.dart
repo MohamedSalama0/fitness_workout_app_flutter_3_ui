@@ -1,7 +1,6 @@
 import 'package:fitness/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 
-
 class PopularMealRow extends StatelessWidget {
   final Map mObj;
   const PopularMealRow({super.key, required this.mObj});
@@ -39,7 +38,7 @@ class PopularMealRow extends StatelessWidget {
                   ),
                   Text(
                     "${mObj["size"]} | ${mObj["time"]} | ${mObj["kcal"]}",
-                    style: TextStyle(color: TColor.gray, fontSize: 12),
+                    style: TextStyle(color: TColor.grey, fontSize: 12),
                   )
                 ],
               ),

@@ -28,7 +28,7 @@ class _SignUpViewState extends State<SignUpView> {
               children: [
                 Text(
                   "Hey there,",
-                  style: TextStyle(color: TColor.gray, fontSize: 16),
+                  style: TextStyle(color: TColor.grey, fontSize: 16),
                 ),
                 Text(
                   "Create an Account",
@@ -77,7 +77,7 @@ class _SignUpViewState extends State<SignUpView> {
                             width: 20,
                             height: 20,
                             fit: BoxFit.contain,
-                            color: TColor.gray,
+                            color: TColor.grey,
                           ))),
                 ),
                 Row(
@@ -93,26 +93,31 @@ class _SignUpViewState extends State<SignUpView> {
                         isCheck
                             ? Icons.check_box_outlined
                             : Icons.check_box_outline_blank_outlined,
-                        color: TColor.gray,
+                        color: TColor.grey,
                         size: 20,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8),
-                      child:  Text(
-                          "By continuing you accept our Privacy Policy and\nTerm of Use",
-                          style: TextStyle(color: TColor.gray, fontSize: 10),
-                        ),
-                     
+                      child: Text(
+                        "By continuing you accept our Privacy Policy and\nTerm of Use",
+                        style: TextStyle(color: TColor.grey, fontSize: 10),
+                      ),
                     )
                   ],
                 ),
                 SizedBox(
                   height: media.width * 0.4,
                 ),
-                RoundButton(title: "Register", onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CompleteProfileView()  ));
-                }),
+                RoundButton(
+                    title: "Register",
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const CompleteProfileView()));
+                    }),
                 SizedBox(
                   height: media.width * 0.04,
                 ),
@@ -122,7 +127,7 @@ class _SignUpViewState extends State<SignUpView> {
                     Expanded(
                         child: Container(
                       height: 1,
-                      color: TColor.gray.withOpacity(0.5),
+                      color: TColor.grey.withOpacity(0.5),
                     )),
                     Text(
                       "  Or  ",
@@ -131,7 +136,7 @@ class _SignUpViewState extends State<SignUpView> {
                     Expanded(
                         child: Container(
                       height: 1,
-                      color: TColor.gray.withOpacity(0.5),
+                      color: TColor.grey.withOpacity(0.5),
                     )),
                   ],
                 ),
@@ -151,7 +156,7 @@ class _SignUpViewState extends State<SignUpView> {
                           color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: TColor.gray.withOpacity(0.4),
+                            color: TColor.grey.withOpacity(0.4),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -162,11 +167,9 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                     ),
-
-                     SizedBox(
+                    SizedBox(
                       width: media.width * 0.04,
                     ),
-
                     GestureDetector(
                       onTap: () {},
                       child: Container(
@@ -177,7 +180,7 @@ class _SignUpViewState extends State<SignUpView> {
                           color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: TColor.gray.withOpacity(0.4),
+                            color: TColor.grey.withOpacity(0.4),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -195,7 +198,7 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
                 TextButton(
                   onPressed: () {
-                     Navigator.push(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const LoginView()));

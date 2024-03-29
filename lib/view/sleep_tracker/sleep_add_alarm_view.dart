@@ -16,9 +16,8 @@ class SleepAddAlarmView extends StatefulWidget {
 }
 
 class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
-
   bool positive = false;
-  
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -78,9 +77,6 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-         
-          
-          
           const SizedBox(
             height: 8,
           ),
@@ -111,7 +107,7 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
           const SizedBox(
             height: 10,
           ),
-         Container(
+          Container(
             padding: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
               color: TColor.lightGray,
@@ -120,8 +116,9 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-               const SizedBox(width: 15,), 
+                const SizedBox(
+                  width: 15,
+                ),
                 Container(
                   width: 30,
                   height: 30,
@@ -137,11 +134,9 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
                 Expanded(
                   child: Text(
                     "Vibrate When Alarm Sound",
-                    style: TextStyle(color: TColor.gray, fontSize: 12),
+                    style: TextStyle(color: TColor.grey, fontSize: 12),
                   ),
                 ),
-                
-
                 SizedBox(
                   height: 30,
                   child: Transform.scale(
@@ -202,7 +197,6 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
                     ),
                   ),
                 )
-               
               ],
             ),
           ),

@@ -188,7 +188,7 @@ class _ResultViewState extends State<ResultView> {
                                 style: TextStyle(
                                     color: selectButton == 0
                                         ? TColor.white
-                                        : TColor.gray,
+                                        : TColor.grey,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500),
                               ),
@@ -211,7 +211,7 @@ class _ResultViewState extends State<ResultView> {
                                 style: TextStyle(
                                     color: selectButton == 1
                                         ? TColor.white
-                                        : TColor.gray,
+                                        : TColor.grey,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500),
                               ),
@@ -291,14 +291,14 @@ class _ResultViewState extends State<ResultView> {
                         Text(
                           dateToString(widget.date1, formatStr: "MMMM"),
                           style: TextStyle(
-                              color: TColor.gray,
+                              color: TColor.grey,
                               fontSize: 16,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           dateToString(widget.date2, formatStr: "MMMM"),
                           style: TextStyle(
-                              color: TColor.gray,
+                              color: TColor.grey,
                               fontSize: 16,
                               fontWeight: FontWeight.w700),
                         ),
@@ -320,7 +320,7 @@ class _ResultViewState extends State<ResultView> {
                                 Text(
                                   iObj["title"].toString(),
                                   style: TextStyle(
-                                      color: TColor.gray,
+                                      color: TColor.grey,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -510,14 +510,14 @@ class _ResultViewState extends State<ResultView> {
                         Text(
                           dateToString(widget.date1, formatStr: "MMMM"),
                           style: TextStyle(
-                              color: TColor.gray,
+                              color: TColor.grey,
                               fontSize: 16,
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           dateToString(widget.date2, formatStr: "MMMM"),
                           style: TextStyle(
-                              color: TColor.gray,
+                              color: TColor.grey,
                               fontSize: 16,
                               fontWeight: FontWeight.w700),
                         ),
@@ -539,7 +539,7 @@ class _ResultViewState extends State<ResultView> {
                                 Text(
                                   iObj["title"].toString(),
                                   style: TextStyle(
-                                      color: TColor.gray,
+                                      color: TColor.grey,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -556,30 +556,30 @@ class _ResultViewState extends State<ResultView> {
                                         iObj["month_1_per"].toString(),
                                         textAlign: TextAlign.right,
                                         style: TextStyle(
-                                            color: TColor.gray, fontSize: 12),
+                                            color: TColor.grey, fontSize: 12),
                                       ),
                                     ),
-
                                     SimpleAnimationProgressBar(
-                          height: 10,
-                          width: media.width - 120,
-                          backgroundColor: TColor.primaryColor1,
-                          foregrondColor: const Color(0xffFFB2B1) ,
-                          ratio: (double.tryParse(iObj["diff_per"].toString()) ?? 0.0) / 100.0 ,
-                          direction: Axis.horizontal,
-                          curve: Curves.fastLinearToSlowEaseIn,
-                          duration: const Duration(seconds: 3),
-                          borderRadius: BorderRadius.circular(5),
-                          
-                        ),
-
+                                      height: 10,
+                                      width: media.width - 120,
+                                      backgroundColor: TColor.primaryColor1,
+                                      foregrondColor: const Color(0xffFFB2B1),
+                                      ratio: (double.tryParse(iObj["diff_per"]
+                                                  .toString()) ??
+                                              0.0) /
+                                          100.0,
+                                      direction: Axis.horizontal,
+                                      curve: Curves.fastLinearToSlowEaseIn,
+                                      duration: const Duration(seconds: 3),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
                                     SizedBox(
                                       width: 25,
                                       child: Text(
                                         iObj["month_2_per"].toString(),
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
-                                          color: TColor.gray,
+                                          color: TColor.grey,
                                           fontSize: 12,
                                         ),
                                       ),
@@ -588,7 +588,6 @@ class _ResultViewState extends State<ResultView> {
                                 )
                               ]);
                         }),
-                 
                     RoundButton(
                         title: "Back to Home",
                         onPressed: () {
@@ -693,7 +692,7 @@ class _ResultViewState extends State<ResultView> {
 
     return Text(text,
         style: TextStyle(
-          color: TColor.gray,
+          color: TColor.grey,
           fontSize: 12,
         ),
         textAlign: TextAlign.center);
@@ -708,7 +707,7 @@ class _ResultViewState extends State<ResultView> {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     var style = TextStyle(
-      color: TColor.gray,
+      color: TColor.grey,
       fontSize: 12,
     );
     Widget text;

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class MealFoodScheduleRow extends StatelessWidget {
   final Map mObj;
   final int index;
-  const MealFoodScheduleRow({super.key, required this.mObj, required this.index});
+  const MealFoodScheduleRow(
+      {super.key, required this.mObj, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,11 @@ class MealFoodScheduleRow extends StatelessWidget {
                 height: 55,
                 width: 55,
                 decoration: BoxDecoration(
-                    color: index % 2 == 0 ? TColor.primaryColor2.withOpacity(0.4) : TColor.secondaryColor2.withOpacity(0.4) ,
+                    color: index % 2 == 0
+                        ? TColor.primaryColor2.withOpacity(0.4)
+                        : TColor.secondaryColor2.withOpacity(0.4),
                     borderRadius: BorderRadius.circular(10)),
-                  alignment: Alignment.center,
+                alignment: Alignment.center,
                 child: Image.asset(
                   mObj["image"].toString(),
                   width: 40,
@@ -46,7 +49,7 @@ class MealFoodScheduleRow extends StatelessWidget {
                   Text(
                     mObj["time"].toString(),
                     style: TextStyle(
-                      color: TColor.gray,
+                      color: TColor.grey,
                       fontSize: 10,
                     ),
                   ),

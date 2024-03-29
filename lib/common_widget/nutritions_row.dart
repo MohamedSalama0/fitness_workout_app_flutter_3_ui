@@ -9,8 +9,8 @@ class NutritionRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var media = MediaQuery.of(context).size;
-      var val = double.tryParse(nObj["value"].toString()) ?? 1;
+    var media = MediaQuery.of(context).size;
+    var val = double.tryParse(nObj["value"].toString()) ?? 1;
     var maxVal = double.tryParse(nObj["max_value"].toString()) ?? 1;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 15),
@@ -35,7 +35,7 @@ class NutritionRow extends StatelessWidget {
             const Spacer(),
             Text(
               "${nObj["value"].toString()} ${nObj["unit_name"].toString()}",
-              style: TextStyle(color: TColor.gray, fontSize: 11),
+              style: TextStyle(color: TColor.grey, fontSize: 11),
             ),
           ],
         ),

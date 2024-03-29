@@ -240,7 +240,7 @@ class _WorkoutTrackerViewState extends State<WorkoutTrackerView> {
                     width: 50,
                     height: 4,
                     decoration: BoxDecoration(
-                        color: TColor.gray.withOpacity(0.3),
+                        color: TColor.grey.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(3)),
                   ),
                   SizedBox(
@@ -303,7 +303,7 @@ class _WorkoutTrackerViewState extends State<WorkoutTrackerView> {
                         child: Text(
                           "See More",
                           style: TextStyle(
-                              color: TColor.gray,
+                              color: TColor.grey,
                               fontSize: 14,
                               fontWeight: FontWeight.w700),
                         ),
@@ -342,10 +342,15 @@ class _WorkoutTrackerViewState extends State<WorkoutTrackerView> {
                       itemBuilder: (context, index) {
                         var wObj = whatArr[index] as Map? ?? {};
                         return InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) =>  WorkoutDetailView( dObj: wObj, ) ));
-                          },
-                          child:  WhatTrainRow(wObj: wObj) );
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => WorkoutDetailView(
+                                            dObj: wObj,
+                                          )));
+                            },
+                            child: WhatTrainRow(wObj: wObj));
                       }),
                   SizedBox(
                     height: media.width * 0.1,

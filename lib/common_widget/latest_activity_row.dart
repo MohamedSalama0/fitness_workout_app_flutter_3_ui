@@ -7,10 +7,8 @@ class LatestActivityRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
         margin: const EdgeInsets.symmetric(vertical: 8),
-       
         child: Row(
           children: [
             ClipRRect(
@@ -22,28 +20,27 @@ class LatestActivityRow extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-
-           const SizedBox(width: 15,),
+            const SizedBox(
+              width: 15,
+            ),
             Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  Text(
+                Text(
                   wObj["title"].toString(),
                   style: TextStyle(
                       color: TColor.black,
-                      fontSize: 12, fontWeight: FontWeight.w500),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500),
                 ),
-
                 Text(
-                 wObj["time"].toString(),
+                  wObj["time"].toString(),
                   style: TextStyle(
-                      color: TColor.gray,
-                      fontSize: 10,),
+                    color: TColor.grey,
+                    fontSize: 10,
+                  ),
                 ),
-
-               
-
               ],
             )),
             IconButton(

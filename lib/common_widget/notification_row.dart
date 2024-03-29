@@ -1,4 +1,3 @@
-
 import 'package:fitness/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +37,7 @@ class NotificationRow extends StatelessWidget {
               Text(
                 nObj["time"].toString(),
                 style: TextStyle(
-                  color: TColor.gray,
+                  color: TColor.grey,
                   fontSize: 10,
                 ),
               ),

@@ -131,7 +131,7 @@ class _PhotoProgressViewState extends State<PhotoProgressView> {
                                 onPressed: () {},
                                 icon: Icon(
                                   Icons.close,
-                                  color: TColor.gray,
+                                  color: TColor.grey,
                                   size: 15,
                                 )))
                       ],
@@ -218,8 +218,7 @@ class _PhotoProgressViewState extends State<PhotoProgressView> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    const ComparisonView(),
+                                builder: (context) => const ComparisonView(),
                               ),
                             );
                           },
@@ -245,7 +244,7 @@ class _PhotoProgressViewState extends State<PhotoProgressView> {
                           onPressed: () {},
                           child: Text(
                             "See more",
-                            style: TextStyle(color: TColor.gray, fontSize: 12),
+                            style: TextStyle(color: TColor.grey, fontSize: 12),
                           ))
                     ],
                   ),
@@ -267,7 +266,7 @@ class _PhotoProgressViewState extends State<PhotoProgressView> {
                             child: Text(
                               pObj["time"].toString(),
                               style:
-                                  TextStyle(color: TColor.gray, fontSize: 12),
+                                  TextStyle(color: TColor.grey, fontSize: 12),
                             ),
                           ),
                           SizedBox(

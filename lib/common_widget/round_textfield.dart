@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../common/colo_extension.dart';
@@ -11,7 +10,15 @@ class RoundTextField extends StatelessWidget {
   final Widget? rigtIcon;
   final bool obscureText;
   final EdgeInsets? margin;
-  const RoundTextField({super.key, required this.hitText, required this.icon, this.controller, this.margin, this.keyboardType, this.obscureText = false , this.rigtIcon });
+  const RoundTextField(
+      {super.key,
+      required this.hitText,
+      required this.icon,
+      this.controller,
+      this.margin,
+      this.keyboardType,
+      this.obscureText = false,
+      this.rigtIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +42,13 @@ class RoundTextField extends StatelessWidget {
                 width: 20,
                 height: 20,
                 child: Image.asset(
-                 icon,
+                  icon,
                   width: 20,
                   height: 20,
                   fit: BoxFit.contain,
-                  color: TColor.gray,
+                  color: TColor.grey,
                 )),
-            hintStyle: TextStyle(color: TColor.gray, fontSize: 12)),
+            hintStyle: TextStyle(color: TColor.grey, fontSize: 12)),
       ),
     );
   }

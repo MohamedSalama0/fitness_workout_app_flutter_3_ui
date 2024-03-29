@@ -13,13 +13,11 @@ class UpcomingWorkoutRow extends StatefulWidget {
 class _UpcomingWorkoutRowState extends State<UpcomingWorkoutRow> {
   bool positive = false;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
-        padding: const EdgeInsets.all( 10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: TColor.white,
             borderRadius: BorderRadius.circular(15),
@@ -52,14 +50,13 @@ class _UpcomingWorkoutRowState extends State<UpcomingWorkoutRow> {
                 Text(
                   widget.wObj["time"].toString(),
                   style: TextStyle(
-                    color: TColor.gray,
+                    color: TColor.grey,
                     fontSize: 10,
                   ),
                 ),
               ],
             )),
-
-             CustomAnimatedToggleSwitch<bool>(
+            CustomAnimatedToggleSwitch<bool>(
               current: positive,
               values: [false, true],
               dif: 0.0,

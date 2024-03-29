@@ -13,7 +13,6 @@ class FoodStepDetailRow extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,16 +51,15 @@ class FoodStepDetailRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Step ${ sObj["no"].toString()}",
+                "Step ${sObj["no"].toString()}",
                 style: TextStyle(
-                  color: TColor.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500
-                ),
+                    color: TColor.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
               ),
               Text(
                 sObj["detail"].toString(),
-                style: TextStyle(color: TColor.gray, fontSize: 12),
+                style: TextStyle(color: TColor.grey, fontSize: 12),
               ),
             ],
           ),

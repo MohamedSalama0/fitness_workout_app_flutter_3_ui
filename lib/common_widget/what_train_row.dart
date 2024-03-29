@@ -41,9 +41,9 @@ class WhatTrainRow extends StatelessWidget {
                       height: 4,
                     ),
                     Text(
-                      "${wObj["exercises"].toString()} | ${ wObj["time"].toString() }" ,
+                      "${wObj["exercises"].toString()} | ${wObj["time"].toString()}",
                       style: TextStyle(
-                        color: TColor.gray,
+                        color: TColor.grey,
                         fontSize: 12,
                       ),
                     ),
@@ -57,7 +57,7 @@ class WhatTrainRow extends StatelessWidget {
                           title: "View More",
                           fontSize: 10,
                           type: RoundButtonType.textGradient,
-                          elevation:0.05,
+                          elevation: 0.05,
                           fontWeight: FontWeight.w400,
                           onPressed: () {}),
                     )

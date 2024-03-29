@@ -43,7 +43,7 @@ class _StartedViewState extends State<StartedView> {
               Text(
                 "Everybody Can Train",
                 style: TextStyle(
-                  color: TColor.gray,
+                  color: TColor.grey,
                   fontSize: 18,
                 ),
               ),

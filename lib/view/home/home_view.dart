@@ -128,7 +128,7 @@ class _HomeViewState extends State<HomeView> {
                       children: [
                         Text(
                           "Welcome Back,",
-                          style: TextStyle(color: TColor.gray, fontSize: 12),
+                          style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
                         Text(
                           "Stefani Wong",
@@ -502,7 +502,7 @@ class _HomeViewState extends State<HomeView> {
                                 Text(
                                   "Real time updates",
                                   style: TextStyle(
-                                    color: TColor.gray,
+                                    color: TColor.grey,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -555,7 +555,7 @@ class _HomeViewState extends State<HomeView> {
                                             Text(
                                               wObj["title"].toString(),
                                               style: TextStyle(
-                                                color: TColor.gray,
+                                                color: TColor.grey,
                                                 fontSize: 10,
                                               ),
                                             ),
@@ -765,7 +765,7 @@ class _HomeViewState extends State<HomeView> {
                                       child: Text(
                                         name,
                                         style: TextStyle(
-                                            color: TColor.gray, fontSize: 14),
+                                            color: TColor.grey, fontSize: 14),
                                       ),
                                     ))
                                 .toList(),
@@ -884,7 +884,7 @@ class _HomeViewState extends State<HomeView> {
                           drawVerticalLine: false,
                           getDrawingHorizontalLine: (value) {
                             return FlLine(
-                              color: TColor.gray.withOpacity(0.15),
+                              color: TColor.grey.withOpacity(0.15),
                               strokeWidth: 2,
                             );
                           },
@@ -915,7 +915,7 @@ class _HomeViewState extends State<HomeView> {
                       child: Text(
                         "See More",
                         style: TextStyle(
-                            color: TColor.gray,
+                            color: TColor.grey,
                             fontSize: 14,
                             fontWeight: FontWeight.w700),
                       ),
@@ -1079,7 +1079,7 @@ class _HomeViewState extends State<HomeView> {
 
     return Text(text,
         style: TextStyle(
-          color: TColor.gray,
+          color: TColor.grey,
           fontSize: 12,
         ),
         textAlign: TextAlign.center);
@@ -1094,7 +1094,7 @@ class _HomeViewState extends State<HomeView> {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     var style = TextStyle(
-      color: TColor.gray,
+      color: TColor.grey,
       fontSize: 12,
     );
     Widget text;

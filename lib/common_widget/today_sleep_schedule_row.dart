@@ -63,12 +63,13 @@ class _TodaySleepScheduleRowState extends State<TodaySleepScheduleRow> {
                       ),
                     ],
                   ),
-
-                  const SizedBox(height: 8,),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   Text(
                     widget.sObj["duration"].toString(),
                     style: TextStyle(
-                        color: TColor.gray,
+                        color: TColor.grey,
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                   ),
@@ -92,11 +93,12 @@ class _TodaySleepScheduleRowState extends State<TodaySleepScheduleRow> {
                 ),
                 SizedBox(
                   height: 30,
+                  width: 80,
                   child: Transform.scale(
                     scale: 0.7,
                     child: CustomAnimatedToggleSwitch<bool>(
                       current: positive,
-                      values: [false, true],
+                      values: const [false, true],
                       dif: 0.0,
                       indicatorSize: const Size.square(30.0),
                       animationDuration: const Duration(milliseconds: 200),
@@ -119,7 +121,16 @@ class _TodaySleepScheduleRowState extends State<TodaySleepScheduleRow> {
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
-                                        colors: TColor.secondaryG),
+                                      colors: positive
+                                          ? TColor.secondaryG
+                                          : [
+                                              // Colors.white10,
+                                              const Color.fromARGB(
+                                                  255, 231, 231, 231),
+                                              const Color.fromARGB(
+                                                  255, 231, 231, 231),
+                                            ],
+                                    ),
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(50.0)),
                                   ),

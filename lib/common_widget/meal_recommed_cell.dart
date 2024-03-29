@@ -27,17 +27,17 @@ class MealRecommendCell extends StatelessWidget {
                     TColor.secondaryColor1.withOpacity(0.5)
                   ],
           ),
-          borderRadius:  BorderRadius.circular(25)),
+          borderRadius: BorderRadius.circular(25)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-                fObj["image"].toString(),
-                width: media.width * 0.3,
-                height: media.width * 0.25,
-                fit: BoxFit.contain,
-              ),
+            fObj["image"].toString(),
+            width: media.width * 0.3,
+            height: media.width * 0.25,
+            fit: BoxFit.contain,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
@@ -52,7 +52,7 @@ class MealRecommendCell extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               "${fObj["size"]} | ${fObj["time"]} | ${fObj["kcal"]}",
-              style: TextStyle(color: TColor.gray, fontSize: 12),
+              style: TextStyle(color: TColor.grey, fontSize: 12),
             ),
           ),
           const SizedBox(

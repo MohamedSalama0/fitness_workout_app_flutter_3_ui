@@ -177,7 +177,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                         width: 50,
                         height: 4,
                         decoration: BoxDecoration(
-                            color: TColor.gray.withOpacity(0.3),
+                            color: TColor.grey.withOpacity(0.3),
                             borderRadius: BorderRadius.circular(3)),
                       ),
                       SizedBox(
@@ -200,7 +200,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                                 Text(
                                   "${widget.dObj["exercises"].toString()} | ${widget.dObj["time"].toString()} | 320 Calories Burn",
                                   style: TextStyle(
-                                      color: TColor.gray, fontSize: 12),
+                                      color: TColor.grey, fontSize: 12),
                                 ),
                               ],
                             ),
@@ -225,8 +225,11 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                           time: "5/27, 09:00 AM",
                           color: TColor.primaryColor2.withOpacity(0.3),
                           onPressed: () {
-
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const WorkoutScheduleView() )  );
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const WorkoutScheduleView()));
                           }),
                       SizedBox(
                         height: media.width * 0.02,
@@ -255,7 +258,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                             child: Text(
                               "${youArr.length} Items",
                               style:
-                                  TextStyle(color: TColor.gray, fontSize: 12),
+                                  TextStyle(color: TColor.grey, fontSize: 12),
                             ),
                           )
                         ],
@@ -321,7 +324,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                             child: Text(
                               "${youArr.length} Sets",
                               style:
-                                  TextStyle(color: TColor.gray, fontSize: 12),
+                                  TextStyle(color: TColor.grey, fontSize: 12),
                             ),
                           )
                         ],

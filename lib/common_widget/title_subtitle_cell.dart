@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../common/colo_extension.dart';
@@ -6,7 +5,8 @@ import '../common/colo_extension.dart';
 class TitleSubtitleCell extends StatelessWidget {
   final String title;
   final String subtitle;
-  const TitleSubtitleCell({super.key, required this.title, required this.subtitle});
+  const TitleSubtitleCell(
+      {super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class TitleSubtitleCell extends StatelessWidget {
           Text(
             subtitle,
             style: TextStyle(
-              color: TColor.gray,
+              color: TColor.grey,
               fontSize: 12,
             ),
           ),

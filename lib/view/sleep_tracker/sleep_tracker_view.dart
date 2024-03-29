@@ -206,7 +206,7 @@ class _SleepTrackerViewState extends State<SleepTrackerView> {
                             drawVerticalLine: false,
                             getDrawingHorizontalLine: (value) {
                               return FlLine(
-                                color: TColor.gray.withOpacity(0.15),
+                                color: TColor.grey.withOpacity(0.15),
                                 strokeWidth: 2,
                               );
                             },
@@ -404,7 +404,7 @@ class _SleepTrackerViewState extends State<SleepTrackerView> {
 
     return Text(text,
         style: TextStyle(
-          color: TColor.gray,
+          color: TColor.grey,
           fontSize: 12,
         ),
         textAlign: TextAlign.center);
@@ -419,7 +419,7 @@ class _SleepTrackerViewState extends State<SleepTrackerView> {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     var style = TextStyle(
-      color: TColor.gray,
+      color: TColor.grey,
       fontSize: 12,
     );
     Widget text;

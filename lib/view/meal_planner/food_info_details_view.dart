@@ -173,7 +173,7 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                             width: 50,
                             height: 4,
                             decoration: BoxDecoration(
-                                color: TColor.gray.withOpacity(0.3),
+                                color: TColor.grey.withOpacity(0.3),
                                 borderRadius: BorderRadius.circular(3)),
                           ),
                         ],
@@ -187,22 +187,12 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    widget.dObj["name"].toString(),
-                                    style: TextStyle(
-                                        color: TColor.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                  Text(
-                                    "by James Ruth",
-                                    style: TextStyle(
-                                        color: TColor.gray, fontSize: 12),
-                                  ),
-                                ],
+                              child: Text(
+                                widget.dObj["name"].toString(),
+                                style: TextStyle(
+                                    color: TColor.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
                               ),
                             ),
                             TextButton(
@@ -302,7 +292,7 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                           trimCollapsedText: ' Read More ...',
                           trimExpandedText: ' Read Less',
                           style: TextStyle(
-                            color: TColor.gray,
+                            color: TColor.grey,
                             fontSize: 12,
                           ),
                           moreStyle: const TextStyle(
@@ -329,7 +319,7 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                               child: Text(
                                 "${stepArr.length} Items",
                                 style:
-                                    TextStyle(color: TColor.gray, fontSize: 12),
+                                    TextStyle(color: TColor.grey, fontSize: 12),
                               ),
                             )
                           ],
@@ -379,7 +369,7 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                                       Text(
                                         nObj["value"].toString(),
                                         style: TextStyle(
-                                            color: TColor.gray, fontSize: 10),
+                                            color: TColor.grey, fontSize: 10),
                                       ),
                                     ],
                                   ));
@@ -402,7 +392,7 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                               child: Text(
                                 "${stepArr.length} Steps",
                                 style:
-                                    TextStyle(color: TColor.gray, fontSize: 12),
+                                    TextStyle(color: TColor.grey, fontSize: 12),
                               ),
                             )
                           ],
@@ -434,16 +424,18 @@ class _FoodInfoDetailsViewState extends State<FoodInfoDetailsView> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        padding: const EdgeInsets.all(15),
                         child: RoundButton(
-                            title: "Add to ${widget.mObj["name"]} Meal",
-                            onPressed: () {
-                             
-                            }),
+                          title: "Add to ${widget.mObj["name"]} Meal",
+                          onPressed: () {},
+                        ),
                       ),
                     ],
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           ),

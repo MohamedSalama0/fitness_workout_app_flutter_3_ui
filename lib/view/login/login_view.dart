@@ -28,7 +28,7 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 Text(
                   "Hey there,",
-                  style: TextStyle(color: TColor.gray, fontSize: 16),
+                  style: TextStyle(color: TColor.grey, fontSize: 16),
                 ),
                 Text(
                   "Welcome Back",
@@ -66,7 +66,7 @@ class _LoginViewState extends State<LoginView> {
                             width: 20,
                             height: 20,
                             fit: BoxFit.contain,
-                            color: TColor.gray,
+                            color: TColor.grey,
                           ))),
                 ),
                 Row(
@@ -75,13 +75,13 @@ class _LoginViewState extends State<LoginView> {
                     Text(
                       "Forgot your password?",
                       style: TextStyle(
-                          color: TColor.gray,
+                          color: TColor.grey,
                           fontSize: 10,
                           decoration: TextDecoration.underline),
                     ),
                   ],
                 ),
-               const Spacer(),
+                const Spacer(),
                 RoundButton(
                     title: "Login",
                     onPressed: () {
@@ -100,7 +100,7 @@ class _LoginViewState extends State<LoginView> {
                     Expanded(
                         child: Container(
                       height: 1,
-                      color: TColor.gray.withOpacity(0.5),
+                      color: TColor.grey.withOpacity(0.5),
                     )),
                     Text(
                       "  Or  ",
@@ -109,7 +109,7 @@ class _LoginViewState extends State<LoginView> {
                     Expanded(
                         child: Container(
                       height: 1,
-                      color: TColor.gray.withOpacity(0.5),
+                      color: TColor.grey.withOpacity(0.5),
                     )),
                   ],
                 ),
@@ -129,7 +129,7 @@ class _LoginViewState extends State<LoginView> {
                           color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: TColor.gray.withOpacity(0.4),
+                            color: TColor.grey.withOpacity(0.4),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -153,7 +153,7 @@ class _LoginViewState extends State<LoginView> {
                           color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: TColor.gray.withOpacity(0.4),
+                            color: TColor.grey.withOpacity(0.4),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),

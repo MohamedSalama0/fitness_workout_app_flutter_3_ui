@@ -128,7 +128,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                                         child: Text(
                                           name,
                                           style: TextStyle(
-                                              color: TColor.gray, fontSize: 14),
+                                              color: TColor.grey, fontSize: 14),
                                         ),
                                       ))
                                   .toList(),
@@ -248,7 +248,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                             drawVerticalLine: false,
                             getDrawingHorizontalLine: (value) {
                               return FlLine(
-                                color: TColor.gray.withOpacity(0.15),
+                                color: TColor.grey.withOpacity(0.15),
                                 strokeWidth: 2,
                               );
                             },
@@ -290,7 +290,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             onPressed: () {
-                               Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
@@ -337,7 +337,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                                         child: Text(
                                           name,
                                           style: TextStyle(
-                                              color: TColor.gray, fontSize: 14),
+                                              color: TColor.grey, fontSize: 14),
                                         ),
                                       ))
                                   .toList(),
@@ -390,8 +390,12 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                   itemBuilder: (context, index) {
                     var fObj = findEatArr[index] as Map? ?? {};
                     return InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => MealFoodDetailsView(eObj: fObj) ) );
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MealFoodDetailsView(eObj: fObj)));
                       },
                       child: FindEatCell(
                         fObj: fObj,
@@ -476,7 +480,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
 
     return Text(text,
         style: TextStyle(
-          color: TColor.gray,
+          color: TColor.grey,
           fontSize: 12,
         ),
         textAlign: TextAlign.center);
@@ -491,7 +495,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     var style = TextStyle(
-      color: TColor.gray,
+      color: TColor.grey,
       fontSize: 12,
     );
     Widget text;
