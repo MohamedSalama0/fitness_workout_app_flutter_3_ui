@@ -29,31 +29,31 @@ class SelectView extends StatelessWidget {
                   );
                 }),
 
-                const SizedBox(height: 15,),
+                // const SizedBox(height: 15,),
 
-                  RoundButton(
-                title: "Meal Planner",
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MealPlannerView(),
-                    ),
-                  );
-                }),
+                //   RoundButton(
+                // title: "Meal Planner",
+                // onPressed: () {
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => const MealPlannerView(),
+                //     ),
+                //   );
+                // }),
 
-                const SizedBox(height: 15,),
+                // const SizedBox(height: 15,),
 
-                  RoundButton(
-                title: "Sleep Tracker",
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SleepTrackerView(),
-                    ),
-                  );
-                })
+                //   RoundButton(
+                // title: "Sleep Tracker",
+                // onPressed: () {
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => const SleepTrackerView(),
+                //     ),
+                //   );
+                // })
           ],
         ),
       ),

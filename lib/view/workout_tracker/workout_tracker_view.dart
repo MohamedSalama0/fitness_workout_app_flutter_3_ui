@@ -1,7 +1,9 @@
 import 'package:fitness/common/colo_extension.dart';
 import 'package:fitness/view/workout_tracker/workour_detail_view.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../common_widget/round_button.dart';
 import '../../common_widget/upcoming_workout_row.dart';
@@ -264,7 +266,7 @@ class _WorkoutTrackerViewState extends State<WorkoutTrackerView> {
                               fontWeight: FontWeight.w700),
                         ),
                         SizedBox(
-                          width: 70,
+                          width: 80,
                           height: 25,
                           child: RoundButton(
                             title: "Check",
@@ -342,15 +344,17 @@ class _WorkoutTrackerViewState extends State<WorkoutTrackerView> {
                       itemBuilder: (context, index) {
                         var wObj = whatArr[index] as Map? ?? {};
                         return InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => WorkoutDetailView(
-                                            dObj: wObj,
-                                          )));
-                            },
-                            child: WhatTrainRow(wObj: wObj));
+                          onTap: () {
+                            /// [TODO: recover it]
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => WorkoutDetailView(
+                            //               dObj: wObj,
+                            //             )));
+                          },
+                          child: WhatTrainRow(wObj: wObj),
+                        );
                       }),
                   SizedBox(
                     height: media.width * 0.1,

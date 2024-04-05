@@ -131,7 +131,7 @@ class _HomeViewState extends State<HomeView> {
                           style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
                         Text(
-                          "Stefani Wong",
+                          "Fatma Dawood",
                           style: TextStyle(
                               color: TColor.black,
                               fontSize: 20,
@@ -252,7 +252,7 @@ class _HomeViewState extends State<HomeView> {
                             fontWeight: FontWeight.w700),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 80,
                         height: 25,
                         child: RoundButton(
                           title: "Check",

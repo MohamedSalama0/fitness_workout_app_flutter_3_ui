@@ -9,6 +9,18 @@ import '../photo_progress/photo_progress_view.dart';
 import '../profile/profile_view.dart';
 import '../workout_tracker/workout_tracker_view.dart';
 
+class ScreenHolder extends StatelessWidget {
+  const ScreenHolder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Screen'),
+    );
+  }
+}
+
+
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
 
@@ -75,6 +87,7 @@ class _MainTabViewState extends State<MainTabView> {
                 onTap: () {
                   selectTab = 1;
                   currentTab = const SelectView();
+                  // currentTab = const ScreenHolder();
                   if (mounted) {
                     setState(() {});
                   }
@@ -87,7 +100,8 @@ class _MainTabViewState extends State<MainTabView> {
                 isActive: selectTab == 2,
                 onTap: () {
                   selectTab = 2;
-                   currentTab = const PhotoProgressView();
+                   currentTab = const ScreenHolder();
+                  //  currentTab = const PhotoProgressView();
                   if (mounted) {
                     setState(() {});
                   }
@@ -98,7 +112,8 @@ class _MainTabViewState extends State<MainTabView> {
                 isActive: selectTab == 3,
                 onTap: () {
                   selectTab = 3;
-                   currentTab = const ProfileView();
+                  //  currentTab = const ProfileView();
+                   currentTab = const ScreenHolder();
                   if (mounted) {
                     setState(() {});
                   }

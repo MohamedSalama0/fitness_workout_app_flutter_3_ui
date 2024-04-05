@@ -24,7 +24,7 @@ class WhatTrainRow extends StatelessWidget {
             ]),
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Row(
+          child: Row( 
             children: [
               Expanded(
                 child: Column(
