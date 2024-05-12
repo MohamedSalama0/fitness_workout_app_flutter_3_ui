@@ -1,8 +1,6 @@
 import 'package:fitness/common/colo_extension.dart';
 import 'package:fitness/common_widget/icon_title_next_row.dart';
-import 'package:fitness/common_widget/round_button.dart';
 import 'package:fitness/view/workout_tracker/exercises_stpe_details.dart';
-import 'package:fitness/view/workout_tracker/workout_schedule_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../common_widget/exercises_set_section.dart';
@@ -39,49 +37,60 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
     {
       "name": "Set 1",
       "set": [
-        {"image": "assets/img/img_1.png", "title": "Warm Up", "value": "05:00"},
+        {
+          "image": "assets/img/img_1.png",
+          "title": "Warm Up",
+          "value": "05:00",
+          "description":
+              "'Warming up' is a part of stretching and preparation for physical exertion or a performance by exercising or practicing gently beforehand, usually undertaken before a performance or practice. Athletes, singers, actors and others warm up before stressing their muscles.",
+          "videoUrl":
+              "https://www.youtube.com/watch?v=fej8W1dJr5E&ab_channel=WORKOUT",
+        },
         {
           "image": "assets/img/img_2.png",
           "title": "Jumping Jack",
-          "value": "12x"
+          "value": "12x",
+          "description":
+              "A jumping jack, also known as a star jump and called a side-straddle hop in the US military, is a physical jumping exercise performed by jumping to a position with the legs spread wide A jumping jack, also known as a star jump and called a side-straddle hop in the US military, is a physical jumping exercise performed by jumping to a position with the legs spread wide,",
+          "videoUrl":
+              "https://www.youtube.com/watch?v=XR0xeuK5zBU&ab_channel=Passion4Profession",
         },
-        {"image": "assets/img/img_1.png", "title": "Skipping", "value": "15x"},
-        {"image": "assets/img/img_2.png", "title": "Squats", "value": "20x"},
+        {
+          "image": "assets/img/img_1.png",
+          "title": "Skipping",
+          "value": "15x",
+          "description":
+              "A skipping rope or jump rope is a tool used in the sport of skipping/jump rope where one or more participants jump over a rope swung so that it passes under their feet and over their heads. There are multiple subsets of skipping/jump rope, including single freestyle, single speed, pairs, three-person speed (Double Dutch), and three-person freestyle (Double Dutch freestyle).",
+          "videoUrl":
+              "https://www.youtube.com/watch?v=a0Hrvh4RS3o&ab_channel=JumpRopeDudes",
+        },
+        {
+          "image": "assets/img/img_2.png",
+          "title": "Squats",
+          "value": "20x",
+          "description":
+              "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up. During the descent, the hip and knee joints flex while the ankle joint dorsiflexes; conversely the hip and knee joints extend and the ankle joint plantarflexes when standing up. Squats also help the hip muscles.",
+          "videoUrl":
+              "https://www.youtube.com/watch?v=nxi3dBw_JBQ&ab_channel=WORKOUT",
+        },
         {
           "image": "assets/img/img_1.png",
           "title": "Arm Raises",
-          "value": "00:53"
+          "value": "10:00",
+          "description": "The Arm Raises exercise is used in weight training. It primarily works the anterior deltoid and the clavicular head of the pectoralis major through the use of arm abduction and flexion through the frontal plane.[1] The training volume, or number of sets and repetitions performed, depends on the lifter's training program and goals."
+          ,"videoUrl":
+              "https://www.youtube.com/watch?v=I77IMHFjBPA&ab_channel=WORKOUT",
         },
         {
           "image": "assets/img/img_2.png",
           "title": "Rest and Drink",
-          "value": "02:00"
+          "value": "02:00",
+          "description": "This helps the tissue heal and grow, resulting in stronger muscles. Also, your muscles store carbohydrates in the form of glycogen. During exercise, your body breaks down glycogen to fuel your workout. Rest gives your body time to replenish these energy stores before your next workout.",
+          "videoUrl":
+              "https://www.youtube.com/watch?v=nrQ1CQ2HRYk&ab_channel=GravityTransformation-FatLossExperts",
         },
       ],
     },
-    {
-      "name": "Set 2",
-      "set": [
-        {"image": "assets/img/img_1.png", "title": "Warm Up", "value": "05:00"},
-        {
-          "image": "assets/img/img_2.png",
-          "title": "Jumping Jack",
-          "value": "12x"
-        },
-        {"image": "assets/img/img_1.png", "title": "Skipping", "value": "15x"},
-        {"image": "assets/img/img_2.png", "title": "Squats", "value": "20x"},
-        {
-          "image": "assets/img/img_1.png",
-          "title": "Arm Raises",
-          "value": "00:53"
-        },
-        {
-          "image": "assets/img/img_2.png",
-          "title": "Rest and Drink",
-          "value": "02:00"
-        },
-      ],
-    }
   ];
 
   @override
@@ -225,11 +234,12 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                           time: "5/27, 09:00 AM",
                           color: TColor.primaryColor2.withOpacity(0.3),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const WorkoutScheduleView()));
+                            /// [TODO: recover it]
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) =>
+                            //             const WorkoutScheduleView()));
                           }),
                       SizedBox(
                         height: media.width * 0.02,
@@ -350,21 +360,17 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                               },
                             );
                           }),
-                      SizedBox(
-                        height: media.width * 0.1,
-                      ),
+                      SizedBox(height: media.width * 0.1),
                     ],
                   ),
                 ),
-                SafeArea(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      RoundButton(title: "Start Workout", onPressed: () {})
-                    ],
-                  ),
-                )
+                // Column(
+                //   mainAxisSize: MainAxisSize.max,
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     RoundButton(title: "Start Workout", onPressed: () {})
+                //   ],
+                // )
               ],
             ),
           ),

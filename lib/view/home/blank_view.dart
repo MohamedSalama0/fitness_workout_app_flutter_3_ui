@@ -17,3 +17,4 @@ class _BlankViewState extends State<BlankView> {
     );
   }
 }
+

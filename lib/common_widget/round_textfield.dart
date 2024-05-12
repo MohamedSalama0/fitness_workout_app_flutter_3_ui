@@ -9,6 +9,8 @@ class RoundTextField extends StatelessWidget {
   final String icon;
   final Widget? rigtIcon;
   final bool obscureText;
+  final bool readOnly;
+  final VoidCallback? onTap;
   final EdgeInsets? margin;
   const RoundTextField(
       {super.key,
@@ -16,6 +18,8 @@ class RoundTextField extends StatelessWidget {
       required this.icon,
       this.controller,
       this.margin,
+      this.onTap,
+      this.readOnly = false,
       this.keyboardType,
       this.obscureText = false,
       this.rigtIcon});
@@ -29,6 +33,8 @@ class RoundTextField extends StatelessWidget {
       child: TextField(
         controller: controller,
         keyboardType: keyboardType,
+        onTap: onTap,
+        readOnly: readOnly,
         obscureText: obscureText,
         decoration: InputDecoration(
             contentPadding:

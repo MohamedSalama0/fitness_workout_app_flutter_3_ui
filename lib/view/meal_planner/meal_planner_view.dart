@@ -1,5 +1,7 @@
+import 'package:fitness/view/meal_planner/controller/meal_planner_provider.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common/colo_extension.dart';
 import '../../common_widget/find_eat_cell.dart';
@@ -282,8 +284,8 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                               fontWeight: FontWeight.w700),
                         ),
                         SizedBox(
-                          width: 70,
                           height: 25,
+                          width: 80,
                           child: RoundButton(
                             title: "Check",
                             type: RoundButtonType.bgGradient,
@@ -316,58 +318,86 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                             fontSize: 16,
                             fontWeight: FontWeight.w700),
                       ),
-                      Container(
-                          height: 30,
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: TColor.primaryG),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton(
-                              items: [
-                                "Breakfast",
-                                "Lunch",
-                                "Dinner",
-                                "Snack",
-                                "Dessert"
-                              ]
-                                  .map((name) => DropdownMenuItem(
-                                        value: name,
-                                        child: Text(
-                                          name,
-                                          style: TextStyle(
-                                              color: TColor.grey, fontSize: 14),
-                                        ),
-                                      ))
-                                  .toList(),
-                              onChanged: (value) {},
-                              icon:
-                                  Icon(Icons.expand_more, color: TColor.white),
-                              hint: Text(
-                                "Breakfast",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: TColor.white, fontSize: 12),
+                      Consumer(
+                        builder: (context, ref, child) {
+                          return Container(
+                              height: 30,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
+                              decoration: BoxDecoration(
+                                gradient:
+                                    LinearGradient(colors: TColor.primaryG),
+                                borderRadius: BorderRadius.circular(15),
                               ),
-                            ),
-                          )),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  items: [
+                                    "Breakfast",
+                                    "Lunch",
+                                    "Dinner",
+                                    "Snack",
+                                    "Dessert"
+                                  ]
+                                      .map((name) => DropdownMenuItem(
+                                            value: name,
+                                            child: Text(
+                                              name,
+                                              style: TextStyle(
+                                                  color: TColor.grey,
+                                                  fontSize: 14),
+                                            ),
+                                          ))
+                                      .toList(),
+                                  onChanged: (value) {
+                                    ref
+                                        .read(mealPlannerProvider)
+                                        .setTodayMealsValue(value);
+                                  },
+                                  icon: Icon(Icons.expand_more,
+                                      color: TColor.white),
+                                  hint: Text(
+                                    ref
+                                        .watch(mealPlannerProvider)
+                                        .todayMealsValue,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: TColor.white, fontSize: 12),
+                                  ),
+                                ),
+                              ));
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(
                     height: media.width * 0.05,
                   ),
-                  ListView.builder(
-                      padding: EdgeInsets.zero,
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: todayMealArr.length,
-                      itemBuilder: (context, index) {
-                        var mObj = todayMealArr[index] as Map? ?? {};
-                        return TodayMealRow(
-                          mObj: mObj,
-                        );
-                      }),
+                  Consumer(
+                    builder:
+                        (BuildContext context, WidgetRef ref, Widget? child) {
+                      var prov = ref.watch(mealPlannerProvider);
+                      var mObjList = prov.todayMealsValue == "Breakfast"
+                          ? prov.breakfastArr
+                          : prov.todayMealsValue == "Lunch"
+                              ? prov.lunchArr
+                              : prov.todayMealsValue == "Dinner"
+                                  ? prov.dinnerArr
+                                  : prov.todayMealsValue == "Snack" 
+                                      ? prov.snacksArr
+                                      : prov.dessertArr;
+                      return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: mObjList.length,
+                          itemBuilder: (context, index) {
+                            var mObj = mObjList[index];
+                            return TodayMealRow(
+                              mObj: mObj,
+                            );
+                          });
+                    },
+                  ),
                 ],
               ),
             ),

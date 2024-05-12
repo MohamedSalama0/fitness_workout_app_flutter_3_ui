@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../common/colo_extension.dart';
 import '../../common_widget/meal_category_cell.dart';
 import '../../common_widget/popular_meal_row.dart';
-import '../../common_widget/today_meal_row.dart';
 import 'food_info_details_view.dart';
 
 class MealFoodDetailsView extends StatefulWidget {
@@ -76,6 +75,7 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
     {
       "name": "Honey Pancake",
       "image": "assets/img/rd_1.png",
+      "b_image": "assets/img/honey_pan.png",
       "size": "Easy",
       "time": "30mins",
       "kcal": "180kCal"
@@ -83,6 +83,7 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
     {
       "name": "Canai Bread",
       "image": "assets/img/m_4.png",
+      "b_image": "assets/img/m_4.png",
       "size": "Easy",
       "time": "20mins",
       "kcal": "230kCal"
@@ -149,50 +150,50 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20),
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              decoration: BoxDecoration(
-                  color: TColor.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 2,
-                        offset: Offset(0, 1))
-                  ]),
-              child: Row(
-                children: [
-                  Expanded(
-                      child: TextField(
-                    controller: txtSearch,
-                    decoration: InputDecoration(
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        prefixIcon: Image.asset(
-                          "assets/img/search.png",
-                          width: 25,
-                          height: 25,
-                        ),
-                        hintText: "Search Pancake"),
-                  )),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 8),
-                    width: 1,
-                    height: 25,
-                    color: TColor.grey.withOpacity(0.3),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Image.asset(
-                      "assets/img/Filter.png",
-                      width: 25,
-                      height: 25,
-                    ),
-                  )
-                ],
-              ),
-            ),
+            // Container(
+            //   margin: const EdgeInsets.symmetric(horizontal: 20),
+            //   padding: const EdgeInsets.symmetric(horizontal: 8),
+            //   decoration: BoxDecoration(
+            //       color: TColor.white,
+            //       borderRadius: BorderRadius.circular(15),
+            //       boxShadow: const [
+            //         BoxShadow(
+            //             color: Colors.black12,
+            //             blurRadius: 2,
+            //             offset: Offset(0, 1))
+            //       ]),
+            //   child: Row(
+            //     children: [
+            //       Expanded(
+            //           child: TextField(
+            //         controller: txtSearch,
+            //         decoration: InputDecoration(
+            //             focusedBorder: InputBorder.none,
+            //             enabledBorder: InputBorder.none,
+            //             prefixIcon: Image.asset(
+            //               "assets/img/search.png",
+            //               width: 25,
+            //               height: 25,
+            //             ),
+            //             hintText: "Search Pancake"),
+            //       )),
+            //       Container(
+            //         margin: const EdgeInsets.symmetric(horizontal: 8),
+            //         width: 1,
+            //         height: 25,
+            //         color: TColor.grey.withOpacity(0.3),
+            //       ),
+            //       InkWell(
+            //         onTap: () {},
+            //         child: Image.asset(
+            //           "assets/img/Filter.png",
+            //           width: 25,
+            //           height: 25,
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
             SizedBox(
               height: media.width * 0.05,
             ),
@@ -246,9 +247,22 @@ class _MealFoodDetailsViewState extends State<MealFoodDetailsView> {
                   itemCount: recommendArr.length,
                   itemBuilder: (context, index) {
                     var fObj = recommendArr[index] as Map? ?? {};
-                    return MealRecommendCell(
-                      fObj: fObj,
-                      index: index,
+                    return InkWell(
+                      onTap: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => FoodInfoDetailsView(
+                        //       dObj: fObj,
+                        //       mObj: widget.eObj,
+                        //     ),
+                        //   ),
+                        // );
+                      },
+                      child: MealRecommendCell(
+                        fObj: fObj,
+                        index: index,
+                      ),
                     );
                   }),
             ),

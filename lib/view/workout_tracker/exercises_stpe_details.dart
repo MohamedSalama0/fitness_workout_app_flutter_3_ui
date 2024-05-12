@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../common/colo_extension.dart';
 import '../../common_widget/round_button.dart';
@@ -41,6 +42,17 @@ class _ExercisesStepDetailsState extends State<ExercisesStepDetails> {
           "This cannot be taken lightly. You see, without realizing it, the clapping of your hands helps you to keep your rhythm while doing the Jumping Jack"
     },
   ];
+  bool loading = true;
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    final vidId = YoutubePlayer.convertUrlToId(widget.eObj["videoUrl"]);
+    _controller = YoutubePlayerController(
+      initialVideoId: vidId!,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,186 +105,175 @@ class _ExercisesStepDetailsState extends State<ExercisesStepDetails> {
       ),
       backgroundColor: TColor.white,
       body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    width: media.width,
-                    height: media.width * 0.43,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: TColor.primaryG),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      "assets/img/video_temp.png",
-                      width: media.width,
-                      height: media.width * 0.43,
-                      fit: BoxFit.contain,
+        child: Column(
+          children: [
+            const SizedBox(height: 30),
+            !_controller.value.hasError
+                ? Container(
+                    // clipBehavior: Clip.antiAliasWithSaveLayer,
+                    // padding: const EdgeInsets.all(8),
+                    // decoration: BoxDecoration(
+                    //   // color: TColor.primaryColor1,
+                    //   borderRadius: BorderRadius.circular(40),
+                    // ),
+                    child: YoutubePlayer(
+                      controller: _controller,
+                      liveUIColor: TColor.red,
+                      showVideoProgressIndicator: true,
+                      controlsTimeOut: const Duration(seconds: 7),
+                      // width: media.width - 10,
                     ),
-                  ),
-                  Container(
-                    width: media.width,
-                    height: media.width * 0.43,
-                    decoration: BoxDecoration(
-                        color: TColor.black.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/img/Play.png",
-                      width: 30,
-                      height: 30,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Text(
-                widget.eObj["title"].toString(),
-                style: TextStyle(
-                    color: TColor.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                "Easy | 390 Calories Burn",
-                style: TextStyle(
-                  color: TColor.grey,
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Text(
-                "Descriptions",
-                style: TextStyle(
-                    color: TColor.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              ReadMoreText(
-                'A jumping jack, also known as a star jump and called a side-straddle hop in the US military, is a physical jumping exercise performed by jumping to a position with the legs spread wide A jumping jack, also known as a star jump and called a side-straddle hop in the US military, is a physical jumping exercise performed by jumping to a position with the legs spread wide',
-                trimLines: 4,
-                colorClickableText: TColor.black,
-                trimMode: TrimMode.Line,
-                trimCollapsedText: ' Read More ...',
-                trimExpandedText: ' Read Less',
-                style: TextStyle(
-                  color: TColor.grey,
-                  fontSize: 12,
-                ),
-                moreStyle:
-                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  )
+                : Container(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(height: 15),
                   Text(
-                    "How To Do It",
+                    widget.eObj["title"].toString(),
                     style: TextStyle(
                         color: TColor.black,
                         fontSize: 16,
                         fontWeight: FontWeight.w700),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "${stepArr.length} Sets",
-                      style: TextStyle(color: TColor.grey, fontSize: 12),
-                    ),
-                  )
-                ],
-              ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: stepArr.length,
-                itemBuilder: ((context, index) {
-                  var sObj = stepArr[index] as Map? ?? {};
-
-                  return StepDetailRow(
-                    sObj: sObj,
-                    isLast: stepArr.last == sObj,
-                  );
-                }),
-              ),
-              Text(
-                "Custom Repetitions",
-                style: TextStyle(
-                    color: TColor.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700),
-              ),
-              SizedBox(
-                height: 150,
-                child: CupertinoPicker.builder(
-                  itemExtent: 40,
-                  selectionOverlay: Container(
-                    width: double.maxFinite,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(
-                            color: TColor.grey.withOpacity(0.2), width: 1),
-                        bottom: BorderSide(
-                            color: TColor.grey.withOpacity(0.2), width: 1),
-                      ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    "Easy | 390 Calories Burn",
+                    style: TextStyle(
+                      color: TColor.grey,
+                      fontSize: 12,
                     ),
                   ),
-                  onSelectedItemChanged: (index) {},
-                  childCount: 60,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          "assets/img/burn.png",
-                          width: 15,
-                          height: 15,
-                          fit: BoxFit.contain,
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "Descriptions",
+                    style: TextStyle(
+                        color: TColor.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  ReadMoreText(
+                    widget.eObj['description'],
+                    trimLines: 4,
+                    colorClickableText: TColor.black,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: ' Read More ...',
+                    trimExpandedText: ' Read Less',
+                    style: TextStyle(
+                      color: TColor.grey,
+                      fontSize: 12,
+                    ),
+                    moreStyle: const TextStyle(
+                        fontSize: 12, fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "How To Do It",
+                        style: TextStyle(
+                            color: TColor.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "${stepArr.length} Sets",
+                          style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
-                        Text(
-                          " ${(index + 1) * 15} Calories Burn",
-                          style: TextStyle(color: TColor.grey, fontSize: 10),
+                      )
+                    ],
+                  ),
+                  ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: stepArr.length,
+                    itemBuilder: ((context, index) {
+                      var sObj = stepArr[index] as Map? ?? {};
+
+                      return StepDetailRow(
+                        sObj: sObj,
+                        isLast: stepArr.last == sObj,
+                      );
+                    }),
+                  ),
+                  Text(
+                    "Custom Repetitions",
+                    style: TextStyle(
+                        color: TColor.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(
+                    height: 150,
+                    child: CupertinoPicker.builder(
+                      itemExtent: 40,
+                      selectionOverlay: Container(
+                        width: double.maxFinite,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                                color: TColor.grey.withOpacity(0.2), width: 1),
+                            bottom: BorderSide(
+                                color: TColor.grey.withOpacity(0.2), width: 1),
+                          ),
                         ),
-                        Text(
-                          " ${index + 1} ",
-                          style: TextStyle(
-                              color: TColor.grey,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          " times",
-                          style: TextStyle(color: TColor.grey, fontSize: 16),
-                        )
-                      ],
-                    );
-                  },
-                ),
+                      ),
+                      onSelectedItemChanged: (index) {},
+                      childCount: 60,
+                      itemBuilder: (context, index) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/img/burn.png",
+                              width: 15,
+                              height: 15,
+                              fit: BoxFit.contain,
+                            ),
+                            Text(
+                              " ${(index + 1) * 15} Calories Burn",
+                              style:
+                                  TextStyle(color: TColor.grey, fontSize: 10),
+                            ),
+                            Text(
+                              " ${index + 1} ",
+                              style: TextStyle(
+                                  color: TColor.grey,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            Text(
+                              " times",
+                              style:
+                                  TextStyle(color: TColor.grey, fontSize: 16),
+                            )
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  RoundButton(title: "Save", elevation: 0, onPressed: () {}),
+                  const SizedBox(height: 15),
+                ],
               ),
-              const SizedBox(height: 10),
-              RoundButton(title: "Save", elevation: 0, onPressed: () {}),
-              const SizedBox(height: 15),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

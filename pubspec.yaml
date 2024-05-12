@@ -28,41 +28,40 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter:
-    sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  carousel_slider: ^4.2.1
-  fl_chart: ^0.62.0
-  simple_animation_progress_bar: ^1.6.0
-  dotted_dashed_line: ^0.0.3
-  simple_circular_progress_bar: ^1.0.2
   animated_toggle_switch: ^0.6.2
-  readmore: ^2.1.0
   calendar_agenda:
     path: dev_lib/calendar_agenda/
+  carousel_slider: ^4.2.1
+  cupertino_icons: ^1.0.2
+  dotted_dashed_line: ^0.0.3
+  fl_chart: ^0.62.0
+  flutter:
+    sdk: flutter
+  flutter_inappwebview: ^6.0.0
+  flutter_riverpod: ^2.5.1
   intl: ^0.18.1
+  readmore: ^2.1.0
+  riverpod: ^2.5.1
+  simple_animation_progress_bar: ^1.6.0
+  simple_circular_progress_bar: ^1.0.2
+  youtube_player_flutter: ^9.0.1
 
-dependency_overrides: 
+dependency_overrides:
   intl: ^0.18.1
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/logo.jpeg"
+  min_sdk_android: 21
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -75,13 +74,10 @@ flutter:
   assets:
     - assets/img/
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -95,6 +91,5 @@ flutter:
           weight: 500
         - asset: assets/font/Poppins-Bold.ttf
           weight: 700
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

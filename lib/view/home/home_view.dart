@@ -1,8 +1,10 @@
 import 'package:dotted_dashed_line/dotted_dashed_line.dart';
 import 'package:fitness/common_widget/round_button.dart';
 import 'package:fitness/common_widget/workout_row.dart';
+import 'package:fitness/view/login/controller/login_provider.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import '../../common/colo_extension.dart';
@@ -130,12 +132,14 @@ class _HomeViewState extends State<HomeView> {
                           "Welcome Back,",
                           style: TextStyle(color: TColor.grey, fontSize: 12),
                         ),
-                        Text(
-                          "Fatma Dawood",
-                          style: TextStyle(
-                              color: TColor.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700),
+                        Consumer(
+                          builder: (context, ref, child) => Text(
+                            ref.read(loginProvider).nameController.text,
+                            style: TextStyle(
+                                color: TColor.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700),
+                          ),
                         ),
                       ],
                     ),

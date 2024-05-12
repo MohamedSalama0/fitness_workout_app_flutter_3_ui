@@ -1,8 +1,6 @@
 import 'package:fitness/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../common/common.dart';
-
 class TodayMealRow extends StatelessWidget {
   final Map mObj;
   const TodayMealRow({super.key, required this.mObj});
@@ -38,14 +36,15 @@ class TodayMealRow extends StatelessWidget {
                     mObj["name"].toString(),
                     style: TextStyle(
                         color: TColor.black,
-                        fontSize: 12,
+                        fontSize: 14,
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "${getDayTitle(mObj["time"].toString())} | ${getStringDateToOtherFormate(mObj["time"].toString(), outFormatStr: "h:mm aa")}",
+                    // "${getDayTitle(mObj["time"].toString())} | ${getStringDateToOtherFormate(mObj["time"].toString(), outFormatStr: "h:mm aa")}",
+                    mObj["time"],
                     style: TextStyle(
                       color: TColor.grey,
-                      fontSize: 10,
+                      fontSize: 12,
                     ),
                   ),
                 ],
@@ -55,8 +54,8 @@ class TodayMealRow extends StatelessWidget {
               onPressed: () {},
               icon: Image.asset(
                 "assets/img/bell.png",
-                width: 25,
-                height: 25,
+                width: 30,
+                height: 30,
               ),
             )
           ],

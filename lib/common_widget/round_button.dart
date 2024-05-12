@@ -24,7 +24,6 @@ class RoundButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // constraints: const BoxConstraints(maxWidth: 80),
       decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: type == RoundButtonType.bgSGradient
@@ -44,6 +43,7 @@ class RoundButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: onPressed,
         height: 50,
+        
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         textColor: TColor.primaryColor1,
         minWidth: double.infinity,
@@ -69,11 +69,12 @@ class RoundButton extends StatelessWidget {
                 blendMode: BlendMode.srcIn,
                 shaderCallback: (bounds) {
                   return LinearGradient(
-                          colors: TColor.primaryG,
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight)
-                      .createShader(
-                          Rect.fromLTRB(0, 0, bounds.width, bounds.height));
+
+                    colors: TColor.primaryG,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ).createShader(Rect.fromLTRB(
+                      0, 0, bounds.width - 50, bounds.height - 50));
                 },
                 child: Text(
                   title,
